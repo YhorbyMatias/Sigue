@@ -1,0 +1,58 @@
+﻿@model Sigue.Models.tblconocimiendoRelacionado
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Conocimiendo Relacionado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Requerido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Requerido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disponible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Acciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Acciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblestudiante.EstudianteCod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ConocimientoId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

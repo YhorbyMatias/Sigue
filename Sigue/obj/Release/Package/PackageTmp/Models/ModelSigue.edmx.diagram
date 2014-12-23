@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06bf7a067b904fdba4936eb1091ec8f8" Name="Diagram1">
+        <EntityTypeShape EntityType="sigue_dbModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.AspNetRole" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.AspNetUser" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblasesor" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblAsesor_estudiante" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblautoaprendizaje" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblcentropractica" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblconocimiendoRelacionado" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblconocimientotrabajo" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblcooperador" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblEmpresa_estudiante" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblestudiante" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblEstudianteEstudio" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblestudianteotrosconocimiento" Width="1.5" PointX="5.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblfacultad" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblprograma" Width="1.5" PointX="3" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblrepresentante" Width="1.5" PointX="8.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblresponsable" Width="1.5" PointX="8.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sigue_dbModel.tblvacante" Width="1.5" PointX="8.25" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="sigue_dbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_facultad_asesor" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_relacion_EA" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_relacion_AE" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_auto_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_C_C" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_cooperador_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_repre_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_responsable_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_vacante_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_conoci_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_trabajo_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_C_E" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_Estudios_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_facultad_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_otros_estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.fk_facul_program" ManuallyRouted="false" />
+        <AssociationConnector Association="sigue_dbModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

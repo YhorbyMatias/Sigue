@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Sigue.Models.tblvacante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mantenimiento vacante</h2>
+
+<p>
+    @Html.ActionLink("Nueva vacante", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResumenCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Funciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Requisitos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AntecedentesAcademicos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Experiencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Habilidades)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaPublicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCierre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblcentropractica.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ubicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResumenCargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Requisitos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AntecedentesAcademicos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Experiencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habilidades)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaPublicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCierre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblcentropractica.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.VacanteId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.VacanteId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.VacanteId })
+        </td>
+    </tr>
+}
+
+</table>

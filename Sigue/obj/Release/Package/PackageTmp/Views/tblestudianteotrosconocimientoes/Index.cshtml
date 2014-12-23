@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Sigue.Models.tblestudianteotrosconocimiento>
+
+@{
+    ViewBag.Title = "Mantenimiento otros conocimientos";
+}
+
+<h2>Mantenimiento otros conocimientos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProyectoPresente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProyectoFuturo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProyectoPasado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProyectoPresente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProyectoFuturo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProyectoPasado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblestudiante.EstudianteCod)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ConocimientoId }) |
+            @Html.ActionLink("Detales", "Details", new { id=item.ConocimientoId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ConocimientoId })
+        </td>
+    </tr>
+}
+
+</table>

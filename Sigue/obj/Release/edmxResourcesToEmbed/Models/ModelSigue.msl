@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sigue_dbModelStoreContainer" CdmEntityContainer="sigue_dbEntities1">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="sigue_dbModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="sigue_dbModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="sigue_dbModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="sigue_dbModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="sigue_dbModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblasesors">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblasesor">
+        <MappingFragment StoreEntitySet="tblasesor">
+          <ScalarProperty Name="AsesorId" ColumnName="AsesorId" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FacultadId" ColumnName="FacultadId" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAsesor_estudiante">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblAsesor_estudiante">
+        <MappingFragment StoreEntitySet="tblAsesor_estudiante">
+          <ScalarProperty Name="RelacionAEId" ColumnName="RelacionAEId" />
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="AsesorId" ColumnName="AsesorId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblautoaprendizajes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblautoaprendizaje">
+        <MappingFragment StoreEntitySet="tblautoaprendizaje">
+          <ScalarProperty Name="AutoaprendizajeId" ColumnName="AutoaprendizajeId" />
+          <ScalarProperty Name="Estudianteid" ColumnName="Estudianteid" />
+          <ScalarProperty Name="Institucion" ColumnName="Institucion" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblcentropracticas">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblcentropractica">
+        <MappingFragment StoreEntitySet="tblcentropractica">
+          <ScalarProperty Name="CentroPracticaId" ColumnName="CentroPracticaId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Actividad" ColumnName="Actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblconocimiendoRelacionadoes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblconocimiendoRelacionado">
+        <MappingFragment StoreEntitySet="tblconocimiendoRelacionado">
+          <ScalarProperty Name="ConocimientoId" ColumnName="ConocimientoId" />
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="Requerido" ColumnName="Requerido" />
+          <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+          <ScalarProperty Name="Brecha" ColumnName="Brecha" />
+          <ScalarProperty Name="Acciones" ColumnName="Acciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblconocimientotrabajoes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblconocimientotrabajo">
+        <MappingFragment StoreEntitySet="tblconocimientotrabajo">
+          <ScalarProperty Name="TrabajoId" ColumnName="TrabajoId" />
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="Gerencia" ColumnName="Gerencia" />
+          <ScalarProperty Name="Organizacional" ColumnName="Organizacional" />
+          <ScalarProperty Name="Relacional" ColumnName="Relacional" />
+          <ScalarProperty Name="Tic" ColumnName="Tic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblcooperadors">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblcooperador">
+        <MappingFragment StoreEntitySet="tblcooperador">
+          <ScalarProperty Name="CooperadorId" ColumnName="CooperadorId" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FuncionesPracticas" ColumnName="FuncionesPracticas" />
+          <ScalarProperty Name="CentroPracticaId" ColumnName="CentroPracticaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmpresa_estudiante">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblEmpresa_estudiante">
+        <MappingFragment StoreEntitySet="tblEmpresa_estudiante">
+          <ScalarProperty Name="RelacionEEId" ColumnName="RelacionEEId" />
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="CentroPracticaId" ColumnName="CentroPracticaId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblestudiantes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblestudiante">
+        <MappingFragment StoreEntitySet="tblestudiante">
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="EstudianteCod" ColumnName="EstudianteCod" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="NacionalidadId" ColumnName="NacionalidadId" />
+          <ScalarProperty Name="FacultadId" ColumnName="FacultadId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="HojaVida" ColumnName="HojaVida" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEstudianteEstudios">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblEstudianteEstudio">
+        <MappingFragment StoreEntitySet="tblEstudianteEstudios">
+          <ScalarProperty Name="EstudiosId" ColumnName="EstudiosId" />
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="Institucion" ColumnName="Institucion" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblestudianteotrosconocimientoes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblestudianteotrosconocimiento">
+        <MappingFragment StoreEntitySet="tblestudianteotrosconocimiento">
+          <ScalarProperty Name="ConocimientoId" ColumnName="ConocimientoId" />
+          <ScalarProperty Name="EstudianteId" ColumnName="EstudianteId" />
+          <ScalarProperty Name="ProyectoPresente" ColumnName="ProyectoPresente" />
+          <ScalarProperty Name="ProyectoFuturo" ColumnName="ProyectoFuturo" />
+          <ScalarProperty Name="ProyectoPasado" ColumnName="ProyectoPasado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblfacultads">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblfacultad">
+        <MappingFragment StoreEntitySet="tblfacultad">
+          <ScalarProperty Name="FacultadId" ColumnName="FacultadId" />
+          <ScalarProperty Name="Facultad" ColumnName="Facultad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblprogramas">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblprograma">
+        <MappingFragment StoreEntitySet="tblprograma">
+          <ScalarProperty Name="ProgramaId" ColumnName="ProgramaId" />
+          <ScalarProperty Name="FacultadId" ColumnName="FacultadId" />
+          <ScalarProperty Name="Programa" ColumnName="Programa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblrepresentantes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblrepresentante">
+        <MappingFragment StoreEntitySet="tblrepresentante">
+          <ScalarProperty Name="RepresentanteId" ColumnName="RepresentanteId" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="CentroPracticaId" ColumnName="CentroPracticaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblresponsables">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblresponsable">
+        <MappingFragment StoreEntitySet="tblresponsable">
+          <ScalarProperty Name="ResponsableId" ColumnName="ResponsableId" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CentroPracticaId" ColumnName="CentroPracticaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblvacantes">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblvacante">
+        <MappingFragment StoreEntitySet="tblvacante">
+          <ScalarProperty Name="VacanteId" ColumnName="VacanteId" />
+          <ScalarProperty Name="CentroPracticaId" ColumnName="CentroPracticaId" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="ResumenCargo" ColumnName="ResumenCargo" />
+          <ScalarProperty Name="Funciones" ColumnName="Funciones" />
+          <ScalarProperty Name="Requisitos" ColumnName="Requisitos" />
+          <ScalarProperty Name="AntecedentesAcademicos" ColumnName="AntecedentesAcademicos" />
+          <ScalarProperty Name="Experiencia" ColumnName="Experiencia" />
+          <ScalarProperty Name="Habilidades" ColumnName="Habilidades" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="sigue_dbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

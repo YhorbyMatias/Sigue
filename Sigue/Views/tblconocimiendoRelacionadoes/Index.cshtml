@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Sigue.Models.tblconocimiendoRelacionado>
+
+@{
+    ViewBag.Title = "Mantenimiento conocimiento relacionado";
+}
+
+<h2>Mantenimiento conocimiento relacionado</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Requerido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Requerido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblestudiante.EstudianteCod)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ConocimientoId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.ConocimientoId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ConocimientoId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,56 @@
+﻿@model Sigue.Models.tblAsesor_estudiante
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar estudiantes</h2>
+
+<h3>Está seguro en querer eliminar el registro.?</h3>
+<div>
+    <h4>Asesor Estudiante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblasesor.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblasesor.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblestudiante.EstudianteCod)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al menú", "Index")
+        </div>
+    }
+</div>

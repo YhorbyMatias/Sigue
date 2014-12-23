@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Sigue.Models.tblautoaprendizaje>
+
+@{
+    ViewBag.Title = "Mantenimiento AutiAprendizaje";
+}
+
+<h2>Mantenimiento AutoAprendizaje</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Institucion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Institucion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblestudiante.EstudianteCod)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.AutoaprendizajeId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.AutoaprendizajeId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.AutoaprendizajeId })
+        </td>
+    </tr>
+}
+
+</table>

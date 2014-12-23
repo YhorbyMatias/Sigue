@@ -1,0 +1,50 @@
+﻿@model Sigue.Models.tblEmpresa_estudiante
+
+@{
+    ViewBag.Title = "Detalles empresas estudiantes";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Empresa Estudiante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblcentropractica.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblcentropractica.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblestudiante.EstudianteCod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.RelacionEEId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

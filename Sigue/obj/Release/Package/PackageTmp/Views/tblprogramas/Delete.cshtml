@@ -1,0 +1,40 @@
+﻿@model Sigue.Models.tblprograma
+
+@{
+    ViewBag.Title = "Eliminar programa";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro de querer eliminar el registro?</h3>
+<div>
+    <h4>Programa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Programa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Programa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblfacultad.Facultad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblfacultad.Facultad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al men", "Index")
+        </div>
+    }
+</div>

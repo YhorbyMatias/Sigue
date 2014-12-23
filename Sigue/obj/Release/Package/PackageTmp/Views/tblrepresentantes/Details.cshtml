@@ -1,0 +1,58 @@
+﻿@model Sigue.Models.tblrepresentante
+
+@{
+    ViewBag.Title = "Detalles represetante";
+}
+
+<h2>Detalle representante</h2>
+
+<div>
+    <h4>Representante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblcentropractica.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblcentropractica.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.RepresentanteId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

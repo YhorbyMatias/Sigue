@@ -1,0 +1,58 @@
+﻿@model Sigue.Models.tblcooperador
+
+@{
+    ViewBag.Title = "Detalles cooperador";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Cooperador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FuncionesPracticas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FuncionesPracticas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblcentropractica.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblcentropractica.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.CooperadorId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

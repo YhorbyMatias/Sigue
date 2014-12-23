@@ -1,0 +1,24 @@
+﻿@model Sigue.Models.tblfacultad
+
+@{
+    ViewBag.Title = "Detalles";
+<h2>Details</h2>
+
+<div>
+    <h4>Facultad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Facultad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Facultad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.FacultadId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

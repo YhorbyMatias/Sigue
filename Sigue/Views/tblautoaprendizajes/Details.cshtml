@@ -1,0 +1,42 @@
+﻿@model Sigue.Models.tblautoaprendizaje
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>AutoAprendizaje</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Institucion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institucion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblestudiante.EstudianteCod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.AutoaprendizajeId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

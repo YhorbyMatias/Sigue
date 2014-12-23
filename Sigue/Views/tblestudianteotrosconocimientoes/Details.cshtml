@@ -1,0 +1,50 @@
+﻿@model Sigue.Models.tblestudianteotrosconocimiento
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles estudio</h2>
+
+<div>
+    <h4>Estudiante otros conocimientos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoPresente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoPresente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoFuturo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoFuturo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoPasado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoPasado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblestudiante.EstudianteCod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ConocimientoId }) |
+    @Html.ActionLink("volver al menú", "Index")
+</p>

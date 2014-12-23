@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Sigue.Models.tblAsesor_estudiante>
+
+@{
+    ViewBag.Title = "Mantenimiento estudiante";
+}
+
+<h2>Mantenimiento asesor estudiante</h2>
+
+<p>
+    @Html.ActionLink("Nuevo estudiante", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblasesor.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblasesor.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblestudiante.EstudianteCod)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.RelacionAEId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.RelacionAEId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.RelacionAEId })
+        </td>
+    </tr>
+}
+
+</table>

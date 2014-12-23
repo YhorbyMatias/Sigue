@@ -1,0 +1,122 @@
+﻿@model Sigue.Models.tblvacante
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles vacante</h2>
+
+<div>
+    <h4>Vacante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResumenCargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResumenCargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisitos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Requisitos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AntecedentesAcademicos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AntecedentesAcademicos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Experiencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experiencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Habilidades)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Habilidades)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPublicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPublicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCierre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblcentropractica.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblcentropractica.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.VacanteId }) |
+    @Html.ActionLink("Volver al menú", "Index")
+</p>

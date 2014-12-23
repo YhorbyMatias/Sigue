@@ -1,0 +1,56 @@
+﻿@model Sigue.Models.tblestudianteotrosconocimiento
+
+@{
+    ViewBag.Title = "Eliminar registro";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Está seguro de querer elimianr el registro?</h3>
+<div>
+    <h4>Sstudiante otros conocimiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoPresente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoPresente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoFuturo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoFuturo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoPasado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoPasado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblestudiante.EstudianteCod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblestudiante.EstudianteCod)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al menú", "Index")
+        </div>
+    }
+</div>

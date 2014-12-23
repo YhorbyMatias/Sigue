@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-Sigue-20141222083955.mdf;Initial Catalog=aspnet-Sigue-20141222083955;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\users\\azuretools\\documents\\visual\ studio\ 2013\\Projects\\Sigue\\Sigue\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="sigue_dbEntities-Web.config Connection String" description="sigue_dbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.ModelSigue.csdl|res://*/Models.ModelSigue.ssdl|res://*/Models.ModelSigue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=f6c7jy98e0.database.windows.net,1433;initial catalog=sigue_db;user id=sigue;password=alvarez@2014;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\users\\azuretools\\documents\\visual\ studio\ 2013\\Projects\\Sigue\\Sigue\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='sigue_dbEntities']/@connectionString" />
+  </parameter>
+  <parameter name="sigue_dbEntities1-Web.config Connection String" description="sigue_dbEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.ModelSigue.csdl|res://*/Models.ModelSigue.ssdl|res://*/Models.ModelSigue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=f6c7jy98e0.database.windows.net,1433;initial catalog=sigue_db;user id=sigue;password=alvarez@2014;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\users\\azuretools\\documents\\visual\ studio\ 2013\\Projects\\Sigue\\Sigue\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='sigue_dbEntities1']/@connectionString" />
+  </parameter>
+</parameters>

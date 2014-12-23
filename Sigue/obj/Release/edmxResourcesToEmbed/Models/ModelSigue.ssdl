@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sigue_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblasesor">
+    <Key>
+      <PropertyRef Name="AsesorId" />
+    </Key>
+    <Property Name="AsesorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FacultadId" Type="int" Nullable="false" />
+    <Property Name="Imagen" Type="image" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblAsesor_estudiante">
+    <Key>
+      <PropertyRef Name="RelacionAEId" />
+    </Key>
+    <Property Name="RelacionAEId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteId" Type="int" Nullable="false" />
+    <Property Name="AsesorId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblautoaprendizaje">
+    <Key>
+      <PropertyRef Name="AutoaprendizajeId" />
+    </Key>
+    <Property Name="AutoaprendizajeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estudianteid" Type="int" Nullable="false" />
+    <Property Name="Institucion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblcentropractica">
+    <Key>
+      <PropertyRef Name="CentroPracticaId" />
+    </Key>
+    <Property Name="CentroPracticaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RazonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nit" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ciudad" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Actividad" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblconocimiendoRelacionado">
+    <Key>
+      <PropertyRef Name="ConocimientoId" />
+    </Key>
+    <Property Name="ConocimientoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteId" Type="int" Nullable="false" />
+    <Property Name="Requerido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Disponible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Brecha" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Acciones" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblconocimientotrabajo">
+    <Key>
+      <PropertyRef Name="TrabajoId" />
+    </Key>
+    <Property Name="TrabajoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteId" Type="int" Nullable="false" />
+    <Property Name="Gerencia" Type="varchar" MaxLength="50" />
+    <Property Name="Organizacional" Type="varchar" MaxLength="50" />
+    <Property Name="Relacional" Type="varchar" MaxLength="50" />
+    <Property Name="Tic" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblcooperador">
+    <Key>
+      <PropertyRef Name="CooperadorId" />
+    </Key>
+    <Property Name="CooperadorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="FuncionesPracticas" Type="varchar" MaxLength="3000" Nullable="false" />
+    <Property Name="CentroPracticaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEmpresa_estudiante">
+    <Key>
+      <PropertyRef Name="RelacionEEId" />
+    </Key>
+    <Property Name="RelacionEEId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteId" Type="int" Nullable="false" />
+    <Property Name="CentroPracticaId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblestudiante">
+    <Key>
+      <PropertyRef Name="EstudianteId" />
+    </Key>
+    <Property Name="EstudianteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteCod" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="Genero" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="NacionalidadId" Type="int" Nullable="false" />
+    <Property Name="FacultadId" Type="int" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Imagen" Type="image" />
+    <Property Name="HojaVida" Type="varchar" MaxLength="200" />
+    <Property Name="Perfil" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblEstudianteEstudios">
+    <Key>
+      <PropertyRef Name="EstudiosId" />
+    </Key>
+    <Property Name="EstudiosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteId" Type="int" Nullable="false" />
+    <Property Name="Institucion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblestudianteotrosconocimiento">
+    <Key>
+      <PropertyRef Name="ConocimientoId" />
+    </Key>
+    <Property Name="ConocimientoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudianteId" Type="int" Nullable="false" />
+    <Property Name="ProyectoPresente" Type="varchar" MaxLength="50" />
+    <Property Name="ProyectoFuturo" Type="varchar" MaxLength="50" />
+    <Property Name="ProyectoPasado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblfacultad">
+    <Key>
+      <PropertyRef Name="FacultadId" />
+    </Key>
+    <Property Name="FacultadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Facultad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblprograma">
+    <Key>
+      <PropertyRef Name="ProgramaId" />
+    </Key>
+    <Property Name="ProgramaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacultadId" Type="int" Nullable="false" />
+    <Property Name="Programa" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblrepresentante">
+    <Key>
+      <PropertyRef Name="RepresentanteId" />
+    </Key>
+    <Property Name="RepresentanteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Cargo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cedula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CentroPracticaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblresponsable">
+    <Key>
+      <PropertyRef Name="ResponsableId" />
+    </Key>
+    <Property Name="ResponsableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="CentroPracticaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblvacante">
+    <Key>
+      <PropertyRef Name="VacanteId" />
+    </Key>
+    <Property Name="VacanteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CentroPracticaId" Type="int" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Departamento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salario" Type="money" />
+    <Property Name="Ubicacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ResumenCargo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Funciones" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Requisitos" Type="varchar" MaxLength="200" />
+    <Property Name="AntecedentesAcademicos" Type="varchar" MaxLength="200" />
+    <Property Name="Experiencia" Type="varchar" MaxLength="50" />
+    <Property Name="Habilidades" Type="varchar" MaxLength="200" />
+    <Property Name="FechaPublicacion" Type="date" Nullable="false" />
+    <Property Name="FechaCierre" Type="date" />
+  </EntityType>
+  <Association Name="fk_auto_estudiante">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblautoaprendizaje" Type="Self.tblautoaprendizaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblautoaprendizaje">
+        <PropertyRef Name="Estudianteid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_C_C">
+    <End Role="tblcentropractica" Type="Self.tblcentropractica" Multiplicity="1" />
+    <End Role="tblEmpresa_estudiante" Type="Self.tblEmpresa_estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcentropractica">
+        <PropertyRef Name="CentroPracticaId" />
+      </Principal>
+      <Dependent Role="tblEmpresa_estudiante">
+        <PropertyRef Name="CentroPracticaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_C_E">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblEmpresa_estudiante" Type="Self.tblEmpresa_estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblEmpresa_estudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_conoci_estudiante">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblconocimiendoRelacionado" Type="Self.tblconocimiendoRelacionado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblconocimiendoRelacionado">
+        <PropertyRef Name="EstudianteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cooperador_empresa">
+    <End Role="tblcentropractica" Type="Self.tblcentropractica" Multiplicity="1" />
+    <End Role="tblcooperador" Type="Self.tblcooperador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcentropractica">
+        <PropertyRef Name="CentroPracticaId" />
+      </Principal>
+      <Dependent Role="tblcooperador">
+        <PropertyRef Name="CentroPracticaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Estudios_estudiante">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblEstudianteEstudios" Type="Self.tblEstudianteEstudios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblEstudianteEstudios">
+        <PropertyRef Name="EstudianteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_facul_program">
+    <End Role="tblfacultad" Type="Self.tblfacultad" Multiplicity="1" />
+    <End Role="tblprograma" Type="Self.tblprograma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblfacultad">
+        <PropertyRef Name="FacultadId" />
+      </Principal>
+      <Dependent Role="tblprograma">
+        <PropertyRef Name="FacultadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_facultad_asesor">
+    <End Role="tblfacultad" Type="Self.tblfacultad" Multiplicity="1" />
+    <End Role="tblasesor" Type="Self.tblasesor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblfacultad">
+        <PropertyRef Name="FacultadId" />
+      </Principal>
+      <Dependent Role="tblasesor">
+        <PropertyRef Name="FacultadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_facultad_estudiante">
+    <End Role="tblfacultad" Type="Self.tblfacultad" Multiplicity="1" />
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblfacultad">
+        <PropertyRef Name="FacultadId" />
+      </Principal>
+      <Dependent Role="tblestudiante">
+        <PropertyRef Name="FacultadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_otros_estudiante">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblestudianteotrosconocimiento" Type="Self.tblestudianteotrosconocimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblestudianteotrosconocimiento">
+        <PropertyRef Name="EstudianteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_relacion_AE">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblAsesor_estudiante" Type="Self.tblAsesor_estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblAsesor_estudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_relacion_EA">
+    <End Role="tblasesor" Type="Self.tblasesor" Multiplicity="1" />
+    <End Role="tblAsesor_estudiante" Type="Self.tblAsesor_estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblasesor">
+        <PropertyRef Name="AsesorId" />
+      </Principal>
+      <Dependent Role="tblAsesor_estudiante">
+        <PropertyRef Name="AsesorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_repre_empresa">
+    <End Role="tblcentropractica" Type="Self.tblcentropractica" Multiplicity="1" />
+    <End Role="tblrepresentante" Type="Self.tblrepresentante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcentropractica">
+        <PropertyRef Name="CentroPracticaId" />
+      </Principal>
+      <Dependent Role="tblrepresentante">
+        <PropertyRef Name="CentroPracticaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_responsable_empresa">
+    <End Role="tblcentropractica" Type="Self.tblcentropractica" Multiplicity="1" />
+    <End Role="tblresponsable" Type="Self.tblresponsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcentropractica">
+        <PropertyRef Name="CentroPracticaId" />
+      </Principal>
+      <Dependent Role="tblresponsable">
+        <PropertyRef Name="CentroPracticaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_trabajo_estudiante">
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
+    <End Role="tblconocimientotrabajo" Type="Self.tblconocimientotrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblestudiante">
+        <PropertyRef Name="EstudianteId" />
+      </Principal>
+      <Dependent Role="tblconocimientotrabajo">
+        <PropertyRef Name="EstudianteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vacante_empresa">
+    <End Role="tblcentropractica" Type="Self.tblcentropractica" Multiplicity="1" />
+    <End Role="tblvacante" Type="Self.tblvacante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcentropractica">
+        <PropertyRef Name="CentroPracticaId" />
+      </Principal>
+      <Dependent Role="tblvacante">
+        <PropertyRef Name="CentroPracticaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sigue_dbModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblasesor" EntityType="Self.tblasesor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAsesor_estudiante" EntityType="Self.tblAsesor_estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblautoaprendizaje" EntityType="Self.tblautoaprendizaje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblcentropractica" EntityType="Self.tblcentropractica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblconocimiendoRelacionado" EntityType="Self.tblconocimiendoRelacionado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblconocimientotrabajo" EntityType="Self.tblconocimientotrabajo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblcooperador" EntityType="Self.tblcooperador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmpresa_estudiante" EntityType="Self.tblEmpresa_estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblestudiante" EntityType="Self.tblestudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEstudianteEstudios" EntityType="Self.tblEstudianteEstudios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblestudianteotrosconocimiento" EntityType="Self.tblestudianteotrosconocimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblfacultad" EntityType="Self.tblfacultad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblprograma" EntityType="Self.tblprograma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblrepresentante" EntityType="Self.tblrepresentante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblresponsable" EntityType="Self.tblresponsable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblvacante" EntityType="Self.tblvacante" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_auto_estudiante" Association="Self.fk_auto_estudiante">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblautoaprendizaje" EntitySet="tblautoaprendizaje" />
+    </AssociationSet>
+    <AssociationSet Name="fk_C_C" Association="Self.fk_C_C">
+      <End Role="tblcentropractica" EntitySet="tblcentropractica" />
+      <End Role="tblEmpresa_estudiante" EntitySet="tblEmpresa_estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_C_E" Association="Self.fk_C_E">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblEmpresa_estudiante" EntitySet="tblEmpresa_estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_conoci_estudiante" Association="Self.fk_conoci_estudiante">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblconocimiendoRelacionado" EntitySet="tblconocimiendoRelacionado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cooperador_empresa" Association="Self.fk_cooperador_empresa">
+      <End Role="tblcentropractica" EntitySet="tblcentropractica" />
+      <End Role="tblcooperador" EntitySet="tblcooperador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Estudios_estudiante" Association="Self.fk_Estudios_estudiante">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblEstudianteEstudios" EntitySet="tblEstudianteEstudios" />
+    </AssociationSet>
+    <AssociationSet Name="fk_facul_program" Association="Self.fk_facul_program">
+      <End Role="tblfacultad" EntitySet="tblfacultad" />
+      <End Role="tblprograma" EntitySet="tblprograma" />
+    </AssociationSet>
+    <AssociationSet Name="fk_facultad_asesor" Association="Self.fk_facultad_asesor">
+      <End Role="tblfacultad" EntitySet="tblfacultad" />
+      <End Role="tblasesor" EntitySet="tblasesor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_facultad_estudiante" Association="Self.fk_facultad_estudiante">
+      <End Role="tblfacultad" EntitySet="tblfacultad" />
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_otros_estudiante" Association="Self.fk_otros_estudiante">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblestudianteotrosconocimiento" EntitySet="tblestudianteotrosconocimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_relacion_AE" Association="Self.fk_relacion_AE">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblAsesor_estudiante" EntitySet="tblAsesor_estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_relacion_EA" Association="Self.fk_relacion_EA">
+      <End Role="tblasesor" EntitySet="tblasesor" />
+      <End Role="tblAsesor_estudiante" EntitySet="tblAsesor_estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_repre_empresa" Association="Self.fk_repre_empresa">
+      <End Role="tblcentropractica" EntitySet="tblcentropractica" />
+      <End Role="tblrepresentante" EntitySet="tblrepresentante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_responsable_empresa" Association="Self.fk_responsable_empresa">
+      <End Role="tblcentropractica" EntitySet="tblcentropractica" />
+      <End Role="tblresponsable" EntitySet="tblresponsable" />
+    </AssociationSet>
+    <AssociationSet Name="fk_trabajo_estudiante" Association="Self.fk_trabajo_estudiante">
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
+      <End Role="tblconocimientotrabajo" EntitySet="tblconocimientotrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vacante_empresa" Association="Self.fk_vacante_empresa">
+      <End Role="tblcentropractica" EntitySet="tblcentropractica" />
+      <End Role="tblvacante" EntitySet="tblvacante" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
