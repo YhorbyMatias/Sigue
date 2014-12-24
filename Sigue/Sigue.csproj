@@ -206,6 +206,7 @@
     <Compile Include="Controllers\tblestudianteotrosconocimientoesController.cs" />
     <Compile Include="Controllers\tblestudiantesController.cs" />
     <Compile Include="Controllers\tblfacultadsController.cs" />
+    <Compile Include="Controllers\tblnacionalidadsController.cs" />
     <Compile Include="Controllers\tblprogramasController.cs" />
     <Compile Include="Controllers\tblrepresentantesController.cs" />
     <Compile Include="Controllers\tblresponsablesController.cs" />
@@ -282,6 +283,9 @@
     <Compile Include="Models\tblfacultad.cs">
       <DependentUpon>ModelSigue.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblnacionalidad.cs">
+      <DependentUpon>ModelSigue.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblprograma.cs">
       <DependentUpon>ModelSigue.tt</DependentUpon>
     </Compile>
@@ -298,15 +302,41 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminLTE.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap-slider\slider.css" />
+    <Content Include="Content\bootstrap-wysihtml5\animate.css" />
+    <Content Include="Content\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Content\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Content\bootstrap-wysihtml5\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\docs.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\sl-slide.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\variables.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\4.jpg" />
+    <Content Include="Imagenes\banner_navidad_2014.jpg" />
+    <Content Include="Imagenes\cadena.png" />
+    <Content Include="Imagenes\clients.png" />
+    <Content Include="Imagenes\esneyder.jpg" />
+    <Content Include="Imagenes\hermeco.jpg" />
+    <Content Include="Imagenes\logo_intergrupo.png" />
+    <Content Include="Imagenes\mvm.jpg" />
+    <Content Include="Imagenes\nutresa.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <EntityDeploy Include="Models\ModelSigue.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelSigue.Designer.cs</LastGenOutput>
@@ -419,11 +449,6 @@
     <Content Include="Views\tblestudianteotrosconocimientoes\Details.cshtml" />
     <Content Include="Views\tblestudianteotrosconocimientoes\Edit.cshtml" />
     <Content Include="Views\tblestudianteotrosconocimientoes\Index.cshtml" />
-    <Content Include="Views\tblestudiantes\Create.cshtml" />
-    <Content Include="Views\tblestudiantes\Delete.cshtml" />
-    <Content Include="Views\tblestudiantes\Details.cshtml" />
-    <Content Include="Views\tblestudiantes\Edit.cshtml" />
-    <Content Include="Views\tblestudiantes\Index.cshtml" />
     <Content Include="Views\tblfacultads\Create.cshtml" />
     <Content Include="Views\tblfacultads\Delete.cshtml" />
     <Content Include="Views\tblfacultads\Details.cshtml" />
@@ -451,6 +476,17 @@
     <Content Include="Views\tblvacantes\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Administración.cshtml" />
+    <Content Include="Views\tblnacionalidads\Create.cshtml" />
+    <Content Include="Views\tblnacionalidads\Delete.cshtml" />
+    <Content Include="Views\tblnacionalidads\Details.cshtml" />
+    <Content Include="Views\tblnacionalidads\Edit.cshtml" />
+    <Content Include="Views\tblnacionalidads\Index.cshtml" />
+    <Content Include="Views\tblestudiantes\Create.cshtml" />
+    <Content Include="Views\tblestudiantes\Delete.cshtml" />
+    <Content Include="Views\tblestudiantes\Details.cshtml" />
+    <Content Include="Views\tblestudiantes\Edit.cshtml" />
+    <Content Include="Views\tblestudiantes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

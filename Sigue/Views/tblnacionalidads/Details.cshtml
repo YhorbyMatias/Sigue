@@ -1,0 +1,26 @@
+﻿@model Sigue.Models.tblnacionalidad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles nacionalidad</h2>
+
+<div>
+    <h4>Nacionalidad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.NacionalidaId }) |
+    @Html.ActionLink("Volverl al menú", "Index")
+</p>

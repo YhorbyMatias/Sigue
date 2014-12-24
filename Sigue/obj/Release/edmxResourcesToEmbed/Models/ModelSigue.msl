@@ -200,6 +200,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblnacionalidads">
+      <EntityTypeMapping TypeName="sigue_dbModel.tblnacionalidad">
+        <MappingFragment StoreEntitySet="tblnacionalidad">
+          <ScalarProperty Name="NacionalidaId" ColumnName="NacionalidaId" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblprogramas">
       <EntityTypeMapping TypeName="sigue_dbModel.tblprograma">
         <MappingFragment StoreEntitySet="tblprograma">

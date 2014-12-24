@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Sigue.Models;
+using System.Web.Security;
 
 namespace Sigue.Controllers
 {
@@ -17,7 +18,7 @@ namespace Sigue.Controllers
         // GET: tblestudiantes
         public ActionResult Index()
         {
-            var tblestudiantes = db.tblestudiantes.Include(t => t.tblfacultad);
+            var tblestudiantes = db.tblestudiantes.Include(t => t.tblnacionalidad).Include(t => t.tblfacultad);
             return View(tblestudiantes.ToList());
         }
 
@@ -39,7 +40,9 @@ namespace Sigue.Controllers
         // GET: tblestudiantes/Create
         public ActionResult Create()
         {
+            ViewBag.NacionalidadId = new SelectList(db.tblnacionalidads, "NacionalidaId", "Nacionalidad");
             ViewBag.FacultadId = new SelectList(db.tblfacultads, "FacultadId", "Facultad");
+         
             return View();
         }
 
@@ -52,11 +55,13 @@ namespace Sigue.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.tblestudiantes.Add(tblestudiante);
                 db.SaveChanges();
+                db.tblestudiantes.Add(tblestudiante);
+                Roles.AddUserToRole(Membership.GetUser().UserName, "Estudiante");
                 return RedirectToAction("Index");
             }
 
+            ViewBag.NacionalidadId = new SelectList(db.tblnacionalidads, "NacionalidaId", "Nacionalidad", tblestudiante.NacionalidadId);
             ViewBag.FacultadId = new SelectList(db.tblfacultads, "FacultadId", "Facultad", tblestudiante.FacultadId);
             return View(tblestudiante);
         }
@@ -73,6 +78,7 @@ namespace Sigue.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.NacionalidadId = new SelectList(db.tblnacionalidads, "NacionalidaId", "Nacionalidad", tblestudiante.NacionalidadId);
             ViewBag.FacultadId = new SelectList(db.tblfacultads, "FacultadId", "Facultad", tblestudiante.FacultadId);
             return View(tblestudiante);
         }
@@ -90,6 +96,7 @@ namespace Sigue.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.NacionalidadId = new SelectList(db.tblnacionalidads, "NacionalidaId", "Nacionalidad", tblestudiante.NacionalidadId);
             ViewBag.FacultadId = new SelectList(db.tblfacultads, "FacultadId", "Facultad", tblestudiante.FacultadId);
             return View(tblestudiante);
         }

@@ -42,6 +42,7 @@ namespace Sigue.Models
         public virtual DbSet<tblEstudianteEstudio> tblEstudianteEstudios { get; set; }
         public virtual DbSet<tblestudianteotrosconocimiento> tblestudianteotrosconocimientoes { get; set; }
         public virtual DbSet<tblfacultad> tblfacultads { get; set; }
+        public virtual DbSet<tblnacionalidad> tblnacionalidads { get; set; }
         public virtual DbSet<tblprograma> tblprogramas { get; set; }
         public virtual DbSet<tblrepresentante> tblrepresentantes { get; set; }
         public virtual DbSet<tblresponsable> tblresponsables { get; set; }

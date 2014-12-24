@@ -1,13 +1,13 @@
 ﻿@model Sigue.Models.tblestudiante
 
 @{
-    ViewBag.Title = "Detalles";
+    ViewBag.Title = "Details";
 }
 
-<h2>Detalles</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Estudiante</h4>
+    <h4>tblestudiante</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -48,14 +48,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Genero)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NacionalidadId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NacionalidadId)
         </dd>
 
         <dt>
@@ -107,6 +99,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.tblnacionalidad.Nacionalidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblnacionalidad.Nacionalidad)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.tblfacultad.Facultad)
         </dt>
 
@@ -117,6 +117,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.EstudianteId }) |
-    @Html.ActionLink("Volver al menú", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EstudianteId }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

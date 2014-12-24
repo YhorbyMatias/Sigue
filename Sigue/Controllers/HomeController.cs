@@ -8,21 +8,26 @@ namespace Sigue.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize(Roles="Estudiante")]
+        [Authorize(Roles="Estudiante,Administrador")]
         public ActionResult Estudiante()
         {
             return View();
         }
-          [Authorize(Roles = "Asesores")]
+        public ActionResult Administración()
+        {
+            return View();
+        }
+          [Authorize(Roles = "Asesores,Administrador")]
           public ActionResult Asesores()
         {
             return View();
         }
-          [Authorize(Roles = "Empresas")]
+          [Authorize(Roles = "Empresas,Administrador")]
         public ActionResult Empresas()
         {
             return View();
         }
+             
         [Authorize]
         public ActionResult Admin()
         {

@@ -193,6 +193,13 @@
     <Property Name="FacultadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Facultad" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="tblnacionalidad">
+    <Key>
+      <PropertyRef Name="NacionalidaId" />
+    </Key>
+    <Property Name="NacionalidaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nacionalidad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="tblprograma">
     <Key>
       <PropertyRef Name="ProgramaId" />
@@ -357,6 +364,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_estu_nacio">
+    <End Role="tblnacionalidad" Type="Self.tblnacionalidad" Multiplicity="1" />
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblnacionalidad">
+        <PropertyRef Name="NacionalidaId" />
+      </Principal>
+      <Dependent Role="tblestudiante">
+        <PropertyRef Name="NacionalidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_Estudios_estudiante">
     <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
     <End Role="tblEstudianteEstudios" Type="Self.tblEstudianteEstudios" Multiplicity="*" />
@@ -508,6 +527,7 @@
     <EntitySet Name="tblEstudianteEstudios" EntityType="Self.tblEstudianteEstudios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblestudianteotrosconocimiento" EntityType="Self.tblestudianteotrosconocimiento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblfacultad" EntityType="Self.tblfacultad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblnacionalidad" EntityType="Self.tblnacionalidad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblprograma" EntityType="Self.tblprograma" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblrepresentante" EntityType="Self.tblrepresentante" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblresponsable" EntityType="Self.tblresponsable" Schema="dbo" store:Type="Tables" />
@@ -547,6 +567,10 @@
     <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_estu_nacio" Association="Self.fk_estu_nacio">
+      <End Role="tblnacionalidad" EntitySet="tblnacionalidad" />
+      <End Role="tblestudiante" EntitySet="tblestudiante" />
     </AssociationSet>
     <AssociationSet Name="fk_Estudios_estudiante" Association="Self.fk_Estudios_estudiante">
       <End Role="tblestudiante" EntitySet="tblestudiante" />

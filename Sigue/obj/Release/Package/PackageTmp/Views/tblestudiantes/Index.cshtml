@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Sigue.Models.tblestudiante>
 
 @{
-    ViewBag.Title = "Mantenimiento estudiante";
+    ViewBag.Title = "Index";
 }
 
-<h2>Mantenimiento estudiante</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -27,9 +27,6 @@
             @Html.DisplayNameFor(model => model.Genero)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NacionalidadId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Direccion)
         </th>
         <th>
@@ -46,6 +43,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Perfil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblnacionalidad.Nacionalidad)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.tblfacultad.Facultad)
@@ -71,9 +71,6 @@
             @Html.DisplayFor(modelItem => item.Genero)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NacionalidadId)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Direccion)
         </td>
         <td>
@@ -92,12 +89,15 @@
             @Html.DisplayFor(modelItem => item.Perfil)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.tblnacionalidad.Nacionalidad)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.tblfacultad.Facultad)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.EstudianteId }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.EstudianteId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.EstudianteId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.EstudianteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EstudianteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EstudianteId })
         </td>
     </tr>
 }

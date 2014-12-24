@@ -45,6 +45,7 @@ namespace Sigue.Models
         public virtual ICollection<tblconocimiendoRelacionado> tblconocimiendoRelacionadoes { get; set; }
         public virtual ICollection<tblconocimientotrabajo> tblconocimientotrabajoes { get; set; }
         public virtual ICollection<tblEmpresa_estudiante> tblEmpresa_estudiante { get; set; }
+        public virtual tblnacionalidad tblnacionalidad { get; set; }
         public virtual ICollection<tblEstudianteEstudio> tblEstudianteEstudios { get; set; }
         public virtual tblfacultad tblfacultad { get; set; }
         public virtual ICollection<tblestudianteotrosconocimiento> tblestudianteotrosconocimientoes { get; set; }

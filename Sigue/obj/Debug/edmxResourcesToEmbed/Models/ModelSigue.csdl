@@ -184,6 +184,7 @@
     <NavigationProperty Name="tblconocimiendoRelacionadoes" Relationship="Self.fk_conoci_estudiante" FromRole="tblestudiante" ToRole="tblconocimiendoRelacionado" />
     <NavigationProperty Name="tblconocimientotrabajoes" Relationship="Self.fk_trabajo_estudiante" FromRole="tblestudiante" ToRole="tblconocimientotrabajo" />
     <NavigationProperty Name="tblEmpresa_estudiante" Relationship="Self.fk_C_E" FromRole="tblestudiante" ToRole="tblEmpresa_estudiante" />
+    <NavigationProperty Name="tblnacionalidad" Relationship="Self.fk_estu_nacio" FromRole="tblestudiante" ToRole="tblnacionalidad" />
     <NavigationProperty Name="tblEstudianteEstudios" Relationship="Self.fk_Estudios_estudiante" FromRole="tblestudiante" ToRole="tblEstudianteEstudios" />
     <NavigationProperty Name="tblfacultad" Relationship="Self.fk_facultad_estudiante" FromRole="tblestudiante" ToRole="tblfacultad" />
     <NavigationProperty Name="tblestudianteotrosconocimientoes" Relationship="Self.fk_otros_estudiante" FromRole="tblestudiante" ToRole="tblestudianteotrosconocimiento" />
@@ -218,6 +219,14 @@
     <NavigationProperty Name="tblasesors" Relationship="Self.fk_facultad_asesor" FromRole="tblfacultad" ToRole="tblasesor" />
     <NavigationProperty Name="tblestudiantes" Relationship="Self.fk_facultad_estudiante" FromRole="tblfacultad" ToRole="tblestudiante" />
     <NavigationProperty Name="tblprogramas" Relationship="Self.fk_facul_program" FromRole="tblfacultad" ToRole="tblprograma" />
+  </EntityType>
+  <EntityType Name="tblnacionalidad">
+    <Key>
+      <PropertyRef Name="NacionalidaId" />
+    </Key>
+    <Property Name="NacionalidaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblestudiantes" Relationship="Self.fk_estu_nacio" FromRole="tblnacionalidad" ToRole="tblestudiante" />
   </EntityType>
   <EntityType Name="tblprograma">
     <Key>
@@ -443,6 +452,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_estu_nacio">
+    <End Role="tblnacionalidad" Type="Self.tblnacionalidad" Multiplicity="1" />
+    <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblnacionalidad">
+        <PropertyRef Name="NacionalidaId" />
+      </Principal>
+      <Dependent Role="tblestudiante">
+        <PropertyRef Name="NacionalidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_Estudios_estudiante">
     <End Role="tblestudiante" Type="Self.tblestudiante" Multiplicity="1" />
     <End Role="tblEstudianteEstudios" Type="Self.tblEstudianteEstudio" Multiplicity="*" />
@@ -513,6 +534,7 @@
     <EntitySet Name="tblEstudianteEstudios" EntityType="Self.tblEstudianteEstudio" />
     <EntitySet Name="tblestudianteotrosconocimientoes" EntityType="Self.tblestudianteotrosconocimiento" />
     <EntitySet Name="tblfacultads" EntityType="Self.tblfacultad" />
+    <EntitySet Name="tblnacionalidads" EntityType="Self.tblnacionalidad" />
     <EntitySet Name="tblprogramas" EntityType="Self.tblprograma" />
     <EntitySet Name="tblrepresentantes" EntityType="Self.tblrepresentante" />
     <EntitySet Name="tblresponsables" EntityType="Self.tblresponsable" />
@@ -572,6 +594,10 @@
     <AssociationSet Name="fk_C_E" Association="Self.fk_C_E">
       <End Role="tblestudiante" EntitySet="tblestudiantes" />
       <End Role="tblEmpresa_estudiante" EntitySet="tblEmpresa_estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="fk_estu_nacio" Association="Self.fk_estu_nacio">
+      <End Role="tblnacionalidad" EntitySet="tblnacionalidads" />
+      <End Role="tblestudiante" EntitySet="tblestudiantes" />
     </AssociationSet>
     <AssociationSet Name="fk_Estudios_estudiante" Association="Self.fk_Estudios_estudiante">
       <End Role="tblestudiante" EntitySet="tblestudiantes" />

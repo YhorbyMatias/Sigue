@@ -74,3 +74,4 @@ c:\users\azuretools\documents\visual studio 2013\Projects\Sigue\Sigue\bin\Micros
 c:\users\azuretools\documents\visual studio 2013\Projects\Sigue\Sigue\obj\Release\ApplicationInsights.config
 c:\users\azuretools\documents\visual studio 2013\Projects\Sigue\Sigue\obj\Release\Sigue.dll
 c:\users\azuretools\documents\visual studio 2013\Projects\Sigue\Sigue\obj\Release\Sigue.pdb
+C:\Users\azuretools\documents\visual studio 2013\Projects\Sigue\Sigue\obj\Release\Sigue.csprojResolveAssemblyReference.cache
